@@ -1,9 +1,11 @@
 package com.tutorial.employee.Services;
 
+import com.tutorial.employee.Model.Departments;
 import com.tutorial.employee.Model.Employee;
 import com.tutorial.employee.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +23,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 
     @Override
     public Optional<Employee> getEmployeeById(Long id) {
+        // Call DepartmentService using RestTemplate
         return employeeRepository.findById(id);
     }
 
